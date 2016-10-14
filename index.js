@@ -87,7 +87,7 @@ var staticServer = http.createServer(function(request,response){
                                 response.setHeader("Content-Range", "bytes " + range.start + "-" + range.end + "/" + stats.size);
                                 response.setHeader("Content-Length", (range.end - range.start + 1));
                                 var raw = fs.createReadStream(realPath, {"start": range.start, "end": range.end});
-                                compressHandle(raw,extension,416, "Request Range Not Satisfiable");
+                                compressHandle(raw,extension,206, "Partial Content");
                             } else {
                                 response.removeHeader("Content-Length");
                                 response.writeHead(416, "Request Range Not Satisfiable");
