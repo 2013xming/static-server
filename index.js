@@ -120,4 +120,4 @@ var staticServer = http.createServer(function(request,response){
     }
 });
 staticServer.listen(config.PORT);
-console.log("ftp server run in port:" + config.PORT);
+console.log("static server run in port:" + config.PORT);
