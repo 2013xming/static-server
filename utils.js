@@ -3,7 +3,7 @@ exports.parseRange = function (str, size) {
         return;
     }
 
-    var range = str.split("-"),
+    var range = str.split("=")[1].split("-"),
         start = parseInt(range[0], 10),
         end = parseInt(range[1], 10);
 
